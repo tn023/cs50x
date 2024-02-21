@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+void ft_print_spaces(int i, int height);
+void ft_print_blocks(int times);
+
+int main()
+{
+    int height;
+    height = 0;
+
+    while (1)
+    {
+        printf("Height: ");
+        scanf("%d", &height);
+
+        if (height > 0 && height < 9)
+        {
+            break;
+        }
+    }
+
+    for (int i = 1; i < height + 1; i++)
+    {
+        ft_print_spaces(i, height);
+        ft_print_blocks(i);
+        printf("  ");
+        ft_print_blocks(i);
+        printf("\n");
+    }
+}
+
+void ft_print_spaces(int i, int height)
+{
+    char space;
+    int times;
+    space = ' ';
+    times = height - i;
+    for (int j = 0; j < times; j++)
+    {
+        printf("%c", space);
+    }
+}
+
+void ft_print_blocks(int times)
+{
+    char block;
+    block = '#';
+    for (int i = 0; i < times; i++)
+    {
+        printf("%c", block);
+    }
+}
